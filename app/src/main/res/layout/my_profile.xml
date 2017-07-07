@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--logo provided from <div>Icons made by <a href="http://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:subtitleTextAppearance="@color/white"
+        android:visibility="invisible"
+        android:subtitle="PanOrbit"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbar3" >
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout
+        android:background="#f5f5f5"
+        android:id="@+id/user_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:paddingLeft="16dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/user_image"
+            android:src="@drawable/user_image"/>
+        <LinearLayout
+            android:layout_toRightOf="@id/user_image"
+            android:id="@+id/user_tag"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User name:"
+                android:textStyle="bold"
+                android:textAllCaps="false"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Age :"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_toRightOf="@id/user_tag"
+            android:id="@+id/user_tag_info"
+            android:paddingRight="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shashikant Dwivedi"
+                android:textAllCaps="false"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24 years"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/add_medicine"
+        android:layout_height="wrap_content"
+        android:text="Add Medicine" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sos_setting"
+        android:text="SOS Setting"/>
+</LinearLayout>

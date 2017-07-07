@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_frequnecy_type_option">
+        <item>@string/frequnecy_daily</item>
+        <item>@string/frequnecy_weekly</item>
+    </string-array>
+</resources>

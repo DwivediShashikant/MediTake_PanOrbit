@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.shashikant.penorbit.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentStart="true"
+        android:id="@+id/toolbar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MediTake"
+            android:textColor="#FFFF"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+        <SearchView
+            android:weightSum="1"
+            android:id="@+id/search_bar"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:queryHint="Search your Medicine"
+            android:layout_above="@+id/textView" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/sos"/>
+    </android.support.v7.widget.Toolbar>
+</RelativeLayout>

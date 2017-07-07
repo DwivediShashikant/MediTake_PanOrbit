@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.shashikant.penorbit.TabActivity">
+    <item
+        android:id="@+id/medicine_today"
+        android:icon="@drawable/pill"
+        android:title="Medicine Today" />
+    <item
+        android:id="@+id/my_medicine"
+        android:title="My Medicine"
+        android:icon="@drawable/pills"
+         />
+    <item
+        android:id="@+id/my_profile"
+        android:icon="@drawable/user_tab"
+        android:title="My Profile" />
+</menu>
