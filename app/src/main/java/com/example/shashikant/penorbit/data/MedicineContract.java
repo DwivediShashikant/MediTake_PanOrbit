@@ -26,11 +26,15 @@ public final class MedicineContract {
         public static final String MEDICINE_DOSE_PER_DAY = "dose_per_day";
         public static final String MEDICINE_REMINDERS = "reminders";
         public static final String MEDICINE_NO_OF_PURCHASED = "medicine_purchased";
-
+        public static final String MEDICINE_TODAY = "medicine_today";
         /**
          * Possible values for frequency type
          */
         public static final int FREQUENCY_DAILY  = 0;
         public static final int FREQUENCY_WEEKLY = 1;
+
+        //possible values for medicine today
+        public static final int MEDICINE_TODAY_TRUE = 1;
+        public static final int MEDICINE_TODAY_FALSE =0;
     }
 }

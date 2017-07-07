@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:paddingTop="16dp"
-        android:id="@+id/item_number"
+        android:id="@+id/today_medicine_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -16,24 +16,37 @@
             <TextView
                 android:textSize="16dp"
                 android:textStyle="bold"
-                android:id="@+id/list_medicine_name"
+                android:id="@+id/today_medicine_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Medicine Name"/>
             <TextView
-                android:id="@+id/list_dose_type"
+                android:id="@+id/today_medicine_dose_type"
                 android:textColor="#bdbdbd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Doses Daily"/>
         </LinearLayout>
-        <ImageView
-            android:id="@+id/add_medicne_today_ImageView"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
-            android:src="@drawable/checked"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true">
+            <TextView
+                android:id="@+id/today_no_of_doses"
+                android:text="3 dose today "
+                android:textColor="#bdbdbd"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/today_times_per_dose"
+                android:text="3 time per day "
+                android:textColor="#bdbdbd"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </RelativeLayout>
 

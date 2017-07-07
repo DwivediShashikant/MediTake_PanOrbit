@@ -30,10 +30,8 @@ public class MedicineCursorAdapter extends CursorAdapter{
     public void bindView(View view, Context context, Cursor cursor) {
         TextView nameTextView  = (TextView)view.findViewById(R.id.list_medicine_name);
         TextView doseTypeTextView = (TextView)view.findViewById(R.id.list_dose_type);
-        TextView quantityPurhcasedTextView= (TextView)view.findViewById(R.id.list_medicine_purchased);
-        if(quantityPurhcasedTextView!=null){
-            Log.v(LOG_TAG,"quantity PurhcasedTextView is not emplty");
-        }
+
+        //TextView quantityPurhcasedTextView= (TextView)view.findViewById(R.id.list_medicine_purchased);
         int nameColumeIndex = cursor.getColumnIndex(MedicineContract.MedicineEntry.MEDICINE_NAME);
         int doseTypeColumnIndex = cursor.getColumnIndex(MedicineContract.MedicineEntry.MEDICINE_FREQUENCY_TYPE);
         int quantityColumnIndex = cursor.getColumnIndex(MedicineContract.MedicineEntry.MEDICINE_QUANTITY_AT_A_TIME);

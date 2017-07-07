@@ -23,7 +23,8 @@ public class MedicineDbHelper extends SQLiteOpenHelper {
             + MedicineEntry.MEDICINE_QUANTITY_AT_A_TIME + " INTEGER NOT NULL, "
             + MedicineEntry.MEDICINE_DOSE_PER_DAY + " INTEGER NOT NULL, "
             + MedicineEntry.MEDICINE_REMINDERS + " TEXT NOT NULL, "
-            + MedicineEntry.MEDICINE_NO_OF_PURCHASED + " INTEGER NOT NULL" +");";
+            + MedicineEntry.MEDICINE_NO_OF_PURCHASED + " INTEGER NOT NULL, "
+            + MedicineEntry.MEDICINE_TODAY + " INTEGER NOT NULL DEFAULT 0 "+");";
     public MedicineDbHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

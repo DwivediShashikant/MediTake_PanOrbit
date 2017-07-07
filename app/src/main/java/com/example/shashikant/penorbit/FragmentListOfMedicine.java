@@ -2,6 +2,7 @@ package com.example.shashikant.penorbit;
 
 import android.app.Fragment;
 import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,7 +16,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.example.shashikant.penorbit.data.MedicineContract.MedicineEntry;
 
 import java.util.zip.Inflater;
@@ -69,6 +73,23 @@ public class FragmentListOfMedicine extends Fragment implements LoaderManager.Lo
                 startActivity(intent);
             }
         });
+
+        //set action on long press on the list view
+        medicineListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                int rowId = 0;
+                Uri currenMedicineUri = ContentUris.withAppendedId(MedicineEntry.CONTENT_URI,id);
+                ContentValues values = new ContentValues();
+                values.put(MedicineEntry.MEDICINE_TODAY,1);
+                 rowId = getActivity().getContentResolver().update(currenMedicineUri,values,null,null);
+                if(rowId!=0){
+                    Toast.makeText(getActivity(),"Saved for The Day",Toast.LENGTH_LONG).show();
+                }
+                return true;
+            }
+        });
+
         return v;
     }
 
