@@ -32,6 +32,7 @@ import static android.text.style.TtsSpan.GENDER_FEMALE;
 
 public class MedicineEditorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    boolean isEditMedicineMode = false;
     public static final String LOG_TAG = MedicineEditorActivity.class.getSimpleName();
     Uri currentMedicineUri = null;
     private EditText mMedicineName;
@@ -75,6 +76,7 @@ public class MedicineEditorActivity extends AppCompatActivity implements LoaderM
             Log.v(LOG_TAG,"The Uri for the current medicine is: "+currentMedicineUri);
             //kicking off loader
             getLoaderManager().initLoader(0,null,MedicineEditorActivity.this);
+            isEditMedicineMode =true;
         }
 
     }
@@ -115,7 +117,9 @@ public class MedicineEditorActivity extends AppCompatActivity implements LoaderM
         getMenuInflater().inflate(R.menu.menu_editor, menu);
         return true;
     }
-    public void insertMedicine(){
+    public void saveMedicine(){
+        Uri uri = null;
+        int row= 0;
         ContentValues values = new ContentValues();
         values.put(MedicineEntry.MEDICINE_NAME,mMedicineName.getText().toString().trim());
         values.put(MedicineEntry.MEDICINE_FREQUENCY_TYPE,mfrequnecyType);
@@ -124,9 +128,14 @@ public class MedicineEditorActivity extends AppCompatActivity implements LoaderM
         values.put(MedicineEntry.MEDICINE_REMINDERS,mReminders.getText().toString().trim());
         values.put(MedicineEntry.MEDICINE_NO_OF_PURCHASED,mPurchased.getText().toString().trim());
 
-        Uri uri = getContentResolver().insert(MedicineEntry.CONTENT_URI,values);
-        if(uri!=null){
-            Toast.makeText(this,"Medicine Inserted",Toast.LENGTH_SHORT).show();
+        if(isEditMedicineMode){
+             row = getContentResolver().update(currentMedicineUri,values,null,null);
+        }
+        else {
+            uri = getContentResolver().insert(MedicineEntry.CONTENT_URI, values);
+        }
+        if(uri!=null || row!=0){
+            Toast.makeText(this,"Medicine Saved",Toast.LENGTH_SHORT).show();
         }
         else
             Toast.makeText(this,"Error with saving medicine",Toast.LENGTH_SHORT).show();
@@ -135,7 +144,7 @@ public class MedicineEditorActivity extends AppCompatActivity implements LoaderM
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.action_save:
-                insertMedicine();
+                saveMedicine();
                 finish();
                 return true;
             case R.id.action_delete:
